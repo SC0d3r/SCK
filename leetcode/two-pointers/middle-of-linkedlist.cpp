@@ -18,23 +18,48 @@ class Solution
 public:
 	inline ListNode *middleNode(ListNode *head)
 	{
-		int size = 0;
-		auto cur = head;
-		while (cur != nullptr)
-		{
-			cur = cur->next;
-			size++;
-		}
+		// method1: O(N) time
+		// runtime: 0ms
 
-		int mid = std::ceil(size / 2);
+		// int size = 0;
+		// auto cur = head;
+		// while (cur != nullptr)
+		// {
+		// 	cur = cur->next;
+		// 	size++;
+		// }
 
-		int i;
-		cur = head;
-		for (i = 0; i < mid; i++)
+		// int mid = std::ceil(size / 2);
+
+		// int i;
+		// cur = head;
+		// for (i = 0; i < mid; i++)
+		// {
+		// 	cur = cur->next;
+		// }
+		// return cur;
+
+		// method 2: O(N) using two-pointers
+		// runtime: 2ms at best this uses way less memory
+
+		ListNode *pFaster = head;
+		ListNode *pSlower = head;
+		while (pFaster != nullptr)
 		{
-			cur = cur->next;
+			// two steps at a time
+			pFaster = pFaster->next;
+			if (pFaster == nullptr)
+			{
+				break;
+			}
+			pFaster = pFaster->next;
+
+			// one step at at a time
+			pSlower = pSlower->next;
 		}
-		return cur;
+		// when the faster pointer reaches the end
+		// the slower pointer reaches the center
+		return pSlower;
 	}
 };
 
