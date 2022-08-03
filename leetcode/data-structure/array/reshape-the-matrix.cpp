@@ -14,41 +14,70 @@ public:
 		if (m * n != r * c)
 			return mat;
 
-		// method 1
-		// runtime: ??ms
-		std::vector<int> flatten;
-		for (const auto xs : mat)
-		{
-			for (const auto x : xs)
-			{
-				flatten.emplace_back(x);
-			}
-		}
-
 		std::vector<std::vector<int>> res;
-		int k = 0;
+
+		// method 1
+		// runtime: 12ms
+
+		// std::vector<int> flatten;
+		// for (const auto xs : mat)
+		// {
+		// 	for (const auto x : xs)
+		// 	{
+		// 		flatten.emplace_back(x);
+		// 	}
+		// }
+
+		// int k = 0;
+		// int j = 0;
+		// while (k < r)
+		// {
+		// 	std::vector<int> row;
+		// 	for (int i = 0; i < c; i++)
+		// 	{
+		// 		row.emplace_back(flatten[i + j]);
+		// 	}
+		// 	res.emplace_back(row);
+		// 	k++;
+		// 	j += c;
+		// }
+
+		// method 2:
+		// runtime: 9ms at the best run
+
+		int i = 0;
 		int j = 0;
-		while (k < r)
+		for (i = 0; i < r; i++)
 		{
 			std::vector<int> row;
-			for (int i = 0; i < c; i++)
+			for (j = 0; j < c; j++)
 			{
-				row.emplace_back(flatten[i + j]);
+				row.emplace_back(mat[pi][pj]);
+				incP(m, n);
 			}
 			res.emplace_back(row);
-			k++;
-			j += c;
 		}
 
 		return res;
+	}
+
+private:
+	int pi = 0;
+	int pj = 0;
+
+	inline void incP(int m, int n)
+	{
+		pj = (pj + 1) % n;
+		if (pj == 0)
+			pi++;
 	}
 };
 
 int main()
 {
-	std::vector<std::vector<int>> mat = {{1, 2, 3, 4}};
+	std::vector<std::vector<int>> mat = {{1, 2}, {3, 4}};
 	Solution s;
-	const auto res = s.matrixReshape(mat, 2, 2);
+	const auto res = s.matrixReshape(mat, 4, 1);
 
 	for (const auto xs : res)
 	{
