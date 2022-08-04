@@ -15,15 +15,14 @@ public:
         {
             for (j = 0; j < n; j++)
             {
-                int accum = 0;
-                max = std::max(max, getArea(grid, m, n, i, j, accum));
+                max = std::max(max, getArea(grid, m, n, i, j));
             }
         }
         return max;
     }
 
 private:
-    inline int getArea(std::vector<std::vector<int>> &grid, int m, int n, int i, int j, int &accum)
+    inline int getArea(std::vector<std::vector<int>> &grid, int m, int n, int i, int j)
     {
 
         if (i < 0 || i >= m || j < 0 || j >= n)
@@ -34,14 +33,11 @@ private:
             return 0;
 
         grid[i][j] = 2; // visited
-        accum++;
 
-        getArea(grid, m, n, i + 1, j, accum);
-        getArea(grid, m, n, i - 1, j, accum);
-        getArea(grid, m, n, i, j + 1, accum);
-        getArea(grid, m, n, i, j - 1, accum);
-
-        return accum;
+        return 1 + getArea(grid, m, n, i + 1, j) +
+               getArea(grid, m, n, i - 1, j) +
+               getArea(grid, m, n, i, j + 1) +
+               getArea(grid, m, n, i, j - 1);
     }
 };
 
