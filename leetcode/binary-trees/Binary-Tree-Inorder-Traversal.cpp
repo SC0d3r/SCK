@@ -15,7 +15,7 @@ struct TreeNode
 class Solution
 {
 public:
-	std::vector<int> preorderTraversal(TreeNode *root)
+	std::vector<int> inorderTraversal(TreeNode *root)
 	{
 		if (!root)
 			return {};
@@ -29,8 +29,8 @@ public:
 	{
 		if (!n)
 			return;
-		res.emplace_back(n->val);
 		inorder(res, n->left);
+		res.emplace_back(n->val);
 		inorder(res, n->right);
 	}
 };
@@ -42,7 +42,7 @@ int main()
 	root->right->left = new TreeNode(3);
 
 	Solution s;
-	const auto res = s.preorderTraversal(root);
+	const auto res = s.inorderTraversal(root);
 
 	// printing
 	for (const auto x : res)
