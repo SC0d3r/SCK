@@ -30,14 +30,26 @@ public:
 		// then check if it is in the right place with the same father node or not
 		// runtime: 13ms
 
-		return isValid(root, root, nullptr);
+		// return isValid(root, root, nullptr);
 
 		// method 3:
 		// there is smarter way of solving this
-		// check leetcode
+
+		return isValidMethod3(root, -2e11, 2e11);
 	}
 
 private:
+	inline bool isValidMethod3(TreeNode *node, long min, long max)
+	{
+		if (!node)
+			return true;
+		if (node->val <= min || node->val >= max)
+			return false;
+		const auto left = isValidMethod3(node->left, min, node->val);
+		const auto right = isValidMethod3(node->right, node->val, max);
+		return left && right; // both should be valid bst as well
+	}
+
 	inline bool isValid(TreeNode *root, TreeNode *node, TreeNode *ancestor)
 	{
 		if (!node)
@@ -130,22 +142,6 @@ private:
 			return insert(node->left, val);
 		}
 	}
-
-	// bool recur(TreeNode *node, TreeNode *ancestor)
-	// {
-	// 	if (!node)
-	// 		return true;
-	// 	if (
-	// 			node->left &&
-	// 			(node->val <= node->left->val || ancestor && node->left->val >= ancestor->val))
-	// 		return false;
-
-	// 	if (node->right &&
-	// 			(node->val >= node->right->val || ancestor && node->right->val <= ancestor->val))
-	// 		return false;
-
-	// 	return recur(node->left, root) && recur(node->right, node);
-	// }
 };
 
 int main()
