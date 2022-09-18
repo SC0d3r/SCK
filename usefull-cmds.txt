@@ -1,0 +1,335 @@
+# after updating the .bashrc file 
+# make sure the run the bellow command
+> source ~/.bashrc
+# above command makes sure the new command
+# gets loaded to the open terminal
+# or you can just close and open the terminal
+
+# Show network traffic:
+> sudo nethogs
+
+# Show available Wifis
+> nmcli dev wifi
+
+# list of saved wifis:
+> nmcli c
+
+# connect to wifi:
+# id is the name of the connection from the "nmcli c" command
+> nmcli c up [id]
+
+# disconnect from wifi:
+> nmcli c down [id]
+
+# connect with password and connection name:
+> nmcli d wifi connect <WiFiSSID> password <WiFiPassword> iface <WifiInterface>
+# OR
+> nmcli -a d wifi connect [wifi name]
+# -a means it asks you for the password then it will save the connection for
+  later use
+
+# or to handle wifi with gui and keyboard use:
+> nmtui
+
+# turn off wifi:
+> nmcli n off
+# turn wifi on:
+> nmcli n on
+
+
+# How to paste from cliboard in vim:
+"*p or "+p
+
+# How to paste the dd command (remove and cut) in vim:
+"1p this command uses the content of the first register in vim
+
+# Dont forget about the google operators which helps you
+# to search better and smarter!
+
+# Copy files and directories:
+> rsync -r --exclude [file or dir name] [source] [destination]
+
+# how to extract the tar file:
+# -x means extract, -v means verbose, -f means file
+> tar -xvf [file.tar.gz]
+
+# Install nodejs from tar.gz which you should download from nodjs.com
+> sudo tar -xf [filename.tar.xz] --directory=/usr/local --strip-components=1
+
+# How to resolve the access denied or no permission on nodejs and webpack
+builds:
+> sudo chown -R $USER [project dir]
+
+# How to make alias so that it can take arguments:
+# see the google function in the .bashrc file
+
+# How to give a file certain permissions:
+# + gives permission and - takes persmission away
+> chmod +rwx [file or dir name]
+> chmod -rwx [file or dir nammod]
+
+# get the cpu info:
+> cat /proc/cpuinfo
+
+# get the cpu info in windows cmd:
+# wmic = windows managment instrumentation command-line
+> wmic cpu get caption, deviceid, name, numberofcores, maxclockspeed, status 
+
+# how to download files with redirect
+# -O to output the file with the same name
+# -L to follow the redirection
+# -J is the remote-header-name is just a file name for http or sth like that
+> curl -J -O -L [url]
+
+# how to fix the nmap interface error while using it with sudo
+> just add the --unprivileged option to nmap
+
+# How to add a new openvpn 
+> sudo nmcli connection import type openvpn file [client].ovpn
+
+# How to split the screen in vim
+# use ctrl + w -> v for vertical
+# use ctrl + w -> s for horizontal
+# use ctrl + w -> ctrl + w to change the window
+# or use ctrl + w -> j,k,l,h to change the window under cursor
+# while vim running use :sp [file-name] to open the file horizontaly
+# use :vsp [file-name] to open it vertically
+# you can use the ctrl + w -> q to close the window under cursor
+
+# how to get the interface name
+> ip route | grep default
+
+# Meaning of the colon in the signature of methods in cpp
+# This is called an initialization list
+# It initializes members before the body of the constructor executes
+# ref:https://stackoverflow.com/questions/2785612/c-what-does-the-colon-after-a-constructor-mean#:~:text=It%20means%20that%20len%20is,()%7B%20foo%20%3D%201%3B%7D%20%7D%3B
+# fore more info: https://www.cprogramming.com/tutorial/initialization-lists-c++.html
+
+# VIM: go to the prev insertion point
+# g; is prev | g, is the next 
+# and you can chain this command to go to prev of prev etc...
+
+# Delete a branch in remote repo (github):
+# remote-name: usualy is origin
+# branch-name: the branch you wanted to delete
+> git push <remote-name> --delete <branch-name>
+
+# VIM: how to go to prev file or next file
+> :bn # to go t o next tab or file
+> :bp # go to prev
+
+# VIM: how to set up marks
+> ma # will set up mark a in the current cursor position
+> 'a # will jump to that marker
+> d'a # will delete from cursor position to marker a
+# there is also y'a c'a
+# for jumping between files you should use uppercase letters ex:
+> mA
+
+# How to unzip a .zip file
+# if you dont provide the -d option it will extract in the same location
+# -q is the quiet mode
+> unzip -q <file.zip> -d <destination folder>
+# without quiet mode one
+> unzip <file.zip> -d <destination>
+
+# how to see the vpn password
+# type in the terminal
+> seahorse
+# click on the pad lock icon after that follow the procedure and click on the vpn 
+# that you want to see the password of
+
+# dont forget about the nullish coalescing operator in javascript (??)
+# it returns the right-hand side operand if it's left-hand side operand is 
+# null or undefined
+> let a = null ?? 42
+# a will be 42
+> let a = 0 ?? 42
+# a will be 0
+# this is kinka special type of || operator 
+# cause the || operator will return the right-hand side operand if
+# it's left-hand side operand is falsy
+
+# gb does the exact same thing in vscode
+# which is selects another occurence of the selected word
+# which you can then delete, change, etc
+# you do for example 3gb to select the next 3 matching selections
+# link: https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/multiple-cursors/
+
+# how to get the total number of commits
+> git rev-list --count [branch-name]
+# across all branches
+> git rev-list --all --count
+
+# put the content of the file into clipboard
+> xclip -sel c < filename
+# above cmd means that selection is clipboard put the file into it
+
+# difference between inputProps and InputProps
+https://stackoverflow.com/questions/46966413/how-to-style-material-ui-textfield
+
+# vim: jump to the definition
+# user gd or ctrl + ]
+
+# vim: choose the option in intellisense 
+# user ctrl + p to go up and ctrl + n to go down  
+
+# VERY VERY USEFULL
+# Vim: alternate file
+# which is an ability to go to the previous file that you have came from
+# ctrl + 6
+
+# source: https://www.youtube.com/watch?v=bQfFvExpZDU
+# Vim: if a line is so long that j skips the below line and goes pass that
+# you can use gj to go down or gk to go up
+# if you want to break that line easily you can do
+# gq q and vim breaks that line into multiple lines
+
+# vim: if you substitude something with
+# :s/[search term]/[replace-with]/g
+# which the above command will run that for the line which the cursor is on
+# but if you do the g& it will run that command for the entire document
+
+# vim: if you use the * to go to a occurence of a word or use
+# the / to search for that then you can use the cgn to change that word 
+# and then for the  next occurence of that word  you can use the . 
+# to repeat all of the above
+
+# where to find the i3(window manager) config file
+# ~/.config/i3/config
+
+# i3 cheat sheet
+# https://i3wm.org/docs/refcard.html
+
+# HOW TO INC/DEC screen light
+# dont forget that you have installed the light package
+# use the light -h for more info
+# and you have set the lightup, lightdown aliases to
+# increase/decrease the light by 10%
+# dont forget to use the sudo to increase or decrease light
+# ex: 
+$ sudo light -A 10 # which increases the light by 10%
+$ sudo light -U 10 # which decreases the light by 10%
+# DONT FORGET: that you have set some aliases like 'lightup' 'lightdown'
+
+# HOW TO INC/DEC sound/volume
+# ex:
+$ amixer set 'Master' 50% # set the volume 50% of the max
+$ amixer set 'Master' 10%+ # increases the sound 10% more
+$ amixer set 'Master' 10%- # decreases the sound 10% less
+# DONT FORGET: that you have set some aliases like 'soundup' 'sounddown'
+
+
+# HOW TO CHANGE LANGUAGE
+# commands are added at the end of .bashrc file
+#  use the menu button to toggle
+# menu button is the button next to the right win key
+
+# DONT FORGET:
+# that you have installed the autocannon npm package
+# that can http load test your site and for benchmarking
+
+# get the total number of commits (the difference) from master branch
+$ git log --oneline [branch name] ^master | wc -l
+
+# show the git log in color ful and short way:
+$ git log --pretty=format:"%C(red)%h %c(blue)%an %C(white)%s"
+# %h = hash, %an = author name, %s = subject of the commit
+
+# Dont forget that you have set the bellow command:
+$ cdp # which goes to the projects/shop
+
+# Dont forget that you have change the $mod+d -> $mod+i in i3
+# and the i3 config file is at ~/.config/i3/config
+
+# ls command:
+$ ls -1 # means one entry per line and if you send the result of
+# ls to a file this is the default behavior but not in terminal
+$ ls -R # recursively show all sub dirs
+$ ls -R1 # you can combine the last two commands
+$ ls -a # shows the hidden files and dirs
+$ ls -l # shows more info
+$ ls -r # shows files and dirs in reverse order
+
+# Dont forget that you have changed the i3(linux): 
+## full screen to mod+a instead of mod+f
+## cause you wanted to use the alt+f instead of ctrl+b in tmux
+
+# Tmux commands:
+# alt+f n -> rotates the open panes
+# alt+f l -> toggles the panes
+# alt+f :kill-session -> kills the session
+# alt+f d -> detaches the session
+# $ tmux ls -> lists all of the active sessions
+# $ tmux attach -t [session number from prev command] attaches to that session
+# alt+f 0 -> goes to 0 pane
+# alt+f % -> opens a new pane horizontaly
+# alt+f c -> create new pane
+# alt+f " -> opens a new pane verticaly
+# alt+f x -> closes the current pane
+# alt+f & -> closes the current window
+# ctrl+d -> to close a window
+
+# To see which program is using particular port
+$ sudo netstat -nlp | grep 4000 # this will return the process using the port 4000
+
+# git:
+# if you did $ git add .
+# in order to unstage changes do:
+$ git reset
+
+# DONT FORGET:
+# In SQL you can save the temperorary results like:
+# https://leetcode.com/problems/market-analysis-i/discuss/2498764/Simple-step-by-step-solution-in
+# remeber the keyword -> with sth as ( ...
+
+# Dont forget about p in VIM:
+# for eample dip will delete the whole paragaraph which cursor is in middle of
+# or ofcourse cip
+
+# DONT FORGET in VIM:
+# if in a function body you can go to the { by pressing [{ in normal mode
+# this will jump the cursor to the first enclosing {
+# and you cant jump to the end by ]}
+
+# in VIM '' toggle between two jumps
+# in VIM zz centers the cursor
+# in VIM zb cursor will be at bottom of screen
+# in VIM zt cursor will be at top of screen
+
+# IN VIM *** IMPORTANT *** with ^ go the first letter in current line 
+# instead of using 0w
+
+# in VIM use [] and ][ to jump between end of curlies like }
+
+# in VIM dont forget [m to jump to {
+# if { is first character of its line you can use [[
+# and you cant use ]m to go to the }
+
+# in VSCODE VIM Dont forget that you cant use ctrl+j and ctrl+k to move the content of current line up and down
+# you did setup this in settings.json
+# in vscode this was done by alt+ up and down arrows
+
+# in vscode vim: you cant scroll up and down without moving the cursor by using ctrl+y and ctrl+e
+
+# in vscode vim dont forget: that you can use zc to fold a function and zo to open the folded function body
+# or you cant za to toggle the folding
+
+# In Terminal we have:
+$ ls -S # (captial S)  sorts ths result by file size
+# if you want to see the file size in human readable format
+$ ls -sh # lower case s and -h for the human readable
+# bellow command will give you the name of file with the biggest size
+$ ls -S | head -1
+
+# DONT FORGET IN CSS 
+# you can stretch to the remaing space in flex using
+# flexGrow: 1
+# in grid you have to do
+# gridTemplateRows: "min-content auto min-content"
+# gridTemplateColumns: "1fr"
+
+# Problem:: VSCODE freezes when you switch from chrome or another program to it
+# FIX: rm -rf ~/.config/Code
+# see also: https://github.com/microsoft/vscode/issues/28709#issuecomment-308487766
+# that files gets big as the times goes on delete it and vscode becomes fast again
