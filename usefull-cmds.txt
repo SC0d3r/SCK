@@ -333,3 +333,6 @@ $ ls -S | head -1
 # FIX: rm -rf ~/.config/Code
 # see also: https://github.com/microsoft/vscode/issues/28709#issuecomment-308487766
 # that files gets big as the times goes on delete it and vscode becomes fast again
+
+# VIM: how to delete an entire function if your cursor is inside of a function:
+va{V # which means select around curly brace then select the whole line (thats why we use capital V to select the function signature as well)
