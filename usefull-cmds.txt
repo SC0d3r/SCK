@@ -345,3 +345,5 @@ va{V # which means select around curly brace then select the whole line (thats w
 # if you want to incremenet a selection of lines for examples indexes of an array
 # first select them then you can do: g ctrl+a
 # for more info watch: youtube - ThePrimeagen - BLAZINGLY FAST Vim | Part 2
+
+# VIM : how to jump to the end of a function: vi{
