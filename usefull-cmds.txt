@@ -339,3 +339,9 @@ va{V # which means select around curly brace then select the whole line (thats w
 
 # VIM: remeber to use the :s/$/bar in vim
 # which if you select a few lines and do that, that will add a bar end of all of the selection, $ means end of the line, s means substitude
+
+# VIM ::: DONT FORGET ::::
+# that you can increment the number in a line with ctrl+a
+# if you want to incremenet a selection of lines for examples indexes of an array
+# first select them then you can do: g ctrl+a
+# for more info watch: youtube - ThePrimeagen - BLAZINGLY FAST Vim | Part 2
