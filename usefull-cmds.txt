@@ -336,3 +336,6 @@ $ ls -S | head -1
 
 # VIM: how to delete an entire function if your cursor is inside of a function:
 va{V # which means select around curly brace then select the whole line (thats why we use capital V to select the function signature as well)
+
+# VIM: remeber to use the :s/$/bar in vim
+# which if you select a few lines and do that, that will add a bar end of all of the selection, $ means end of the line, s means substitude
