@@ -347,3 +347,6 @@ va{V # which means select around curly brace then select the whole line (thats w
 # for more info watch: youtube - ThePrimeagen - BLAZINGLY FAST Vim | Part 2
 
 # VIM : how to jump to the end of a function: vi{
+
+# DONT forget in google chrome you can search between tabs by:
+# Ctrl + Shift + A -> then type the name of the tab it is fuzzy finder
