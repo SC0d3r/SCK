@@ -350,3 +350,9 @@ va{V # which means select around curly brace then select the whole line (thats w
 
 # DONT forget in google chrome you can search between tabs by:
 # Ctrl + Shift + A -> then type the name of the tab it is fuzzy finder
+
+# HOW TO: know if a program is using a port:
+# Or when nodejs server stucks on using port for example 3000 how to close it:
+$ lsof -i tcp:3000
+# then you can 
+$ kill -9 PID
