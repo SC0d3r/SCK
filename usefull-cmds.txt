@@ -356,3 +356,7 @@ va{V # which means select around curly brace then select the whole line (thats w
 $ lsof -i tcp:3000
 # then you can 
 $ kill -9 PID
+
+# Dont forget that you have installed n package for updating and installing nodejs
+# example:
+$ sudo n latest # will update/install nodejs to the latest version
