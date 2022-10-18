@@ -360,3 +360,10 @@ $ kill -9 PID
 # Dont forget that you have installed n package for updating and installing nodejs
 # example:
 $ sudo n latest # will update/install nodejs to the latest version
+
+# Dont forget that you have clip alias in your .bashrc file
+# clip is alias to $ xclip -sel c # which sends the output to the clipboard so you can later on paste from clipboard
+# example: 
+$ ls | grep someSearchText | clip
+# then paste it in terminal with ctrl + shift + v
+
