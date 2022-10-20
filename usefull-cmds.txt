@@ -367,3 +367,8 @@ $ sudo n latest # will update/install nodejs to the latest version
 $ ls | grep someSearchText | clip
 # then paste it in terminal with ctrl + shift + v
 
+# Dont forget that the neovim config is in ~/.config/nvim/
+
+# Dont forget in VSCode vim that in visual mode you can past yanked item with <leader>p
+# This way paste register will  still have the item you want so later you can to p to past
+# see more in vscode user settings.json
