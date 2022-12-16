@@ -372,3 +372,9 @@ $ ls | grep someSearchText | clip
 # Dont forget in VSCode vim that in visual mode you can past yanked item with <leader>p
 # This way paste register will  still have the item you want so later you can to p to past
 # see more in vscode user settings.json
+
+# Dont forget about the top command in linux
+# you can use it to see the running process
+# if you want to filter a process just press o then type COMMAND=npm run dev
+# will show the $npm run dev process and if you want to clear all the filters
+# press =
