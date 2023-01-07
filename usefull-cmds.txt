@@ -386,3 +386,15 @@ $ ls | grep someSearchText | clip
 # you can use command pgrep to find process id
 # this command combine ps aux | grep process_name into one command
 $ pgrep process_name # returns process id
+
+# pkill command is like the pgrep command
+# for pkill command you dont need to specify the process id 
+# you can just give the process name
+$ pkill -9 process_name # kills all processes with the name process_name
+# -9 in above command means SIGKILL for getting the list of all commands type
+$ kill -l # this one list all of the signals like -9 -2 etc ...
+
+# you can send process to background with &
+# you can send a background processes to foreground with fg job_id command
+# you can send a foreground process to background with ctlr+z or in another terminal type bg job_id
+# for getting job_id type jobs
