@@ -382,3 +382,7 @@ $ ls | grep someSearchText | clip
 # when you get the error that git cannot install (connection refuesed or error or something like this)
 # this is because of https_proxy if you type $echo https_proxy it will show that
 # to fix: you need to type $unset https_proxy and $unset HTTPS_PROXY
+
+# you can use command pgrep to find process id
+# this command combine ps aux | grep process_name into one command
+$ pgrep process_name # returns process id
