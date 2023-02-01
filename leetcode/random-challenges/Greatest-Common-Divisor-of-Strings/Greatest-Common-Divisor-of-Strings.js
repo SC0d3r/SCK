@@ -75,4 +75,14 @@ function runTests() {
   console.log("OK All tests passed.")
 }
 
+function timed() {
+  let a = "TAUXXTAUXXTAUXXTAUXXTAUXX"
+  let b = "TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX"
+
+  console.time("execution time")
+  run(a, b)
+  console.timeEnd("execution time")
+}
+
 runTests()
+timed()
