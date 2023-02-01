@@ -1,0 +1,33 @@
+{
+  "vim.smartRelativeLine": true,
+  "keyboard.dispatch": "keyCode",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "vim.leader": " ",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "_", "d", "P"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["ctrl+j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["ctrl+k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 90,
+  "editor.stickyScroll.enabled": true,
+  "vim.useSystemClipboard": true,
+  "diffEditor.ignoreTrimWhitespace": false
+}
