@@ -101,7 +101,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias open='xdg-open'
 alias vpn='protonvpn-cli'
-alias vpnon='protonvpn-cli c NL-FREE#126'
+alias vpnon='openvpn ~/Downloads/KR-183.100.137.223.ovpn'
 alias fixnet='~/Documents/fix-internet-dns.sh'
 alias soundup='amixer set "Master" 10%+'
 alias soundup5='amixer set 'Master' 5%+'
@@ -115,6 +115,7 @@ alias killpy='pgrep rosmaster | xargs kill -9;pgrep gzserver | xargs kill -9;pgr
 alias swapcaps='setxkbmap -option caps:swapescape'
 alias revertcaps='setxkbmap -option'
 alias clip='xclip -sel c'
+alias so='source ~/.bashrc'
 
 google() {
   google-chrome "https://google.com/search?q=$1"
@@ -149,6 +150,9 @@ source ~/catkin_ws/devel/setup.bash
 export PATH="/usr/local/cuda-11.4/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH"
 
+# adding go lang as environment variable
+export PATH="$PATH:/usr/local/go/bin"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/sck/y/google-cloud-sdk/path.bash.inc' ]; then . '/home/sck/y/google-cloud-sdk/path.bash.inc'; fi
 
@@ -180,3 +184,4 @@ setxkbmap -option caps:swapescape
 # change the language
 setxkbmap -layout us,ir
 setxkbmap -option 'grp:menu_toggle'
+. "$HOME/.cargo/env"
