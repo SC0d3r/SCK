@@ -398,3 +398,9 @@ $ kill -l # this one list all of the signals like -9 -2 etc ...
 # you can send a background processes to foreground with fg job_id command
 # you can send a foreground process to background with ctlr+z or in another terminal type bg job_id
 # for getting job_id type jobs
+
+# Dont forget that you can jump between windows in tmux by using the
+# prefix + w 
+# in my case prefix is alt + f
+# or you can prefix ' then type the window number
+# this is especially usefull if you want to jump to a window with double digit
