@@ -8,9 +8,7 @@
     {
       "before": ["<leader>", "p"],
       "after": ["\"", "_", "d", "P"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
+    },
     {
       "before": ["ctrl+j"],
       "commands": ["editor.action.moveLinesDownAction"]
@@ -18,6 +16,28 @@
     {
       "before": ["ctrl+k"],
       "commands": ["editor.action.moveLinesUpAction"]
+    },
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>","z","z"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>","z","z"]
+    },
+    {
+      "before": ["ctrl+j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["ctrl+k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
     }
   ],
   "editor.tabSize": 2,
@@ -29,5 +49,12 @@
   "editor.wordWrapColumn": 90,
   "editor.stickyScroll.enabled": true,
   "vim.useSystemClipboard": true,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "tabnine.experimentalAutoImports": true,
+  "aws.telemetry": false,
+  "git.suggestSmartCommit": false
 }
+
