@@ -4,6 +4,7 @@
   "editor.formatOnSave": true,
   "files.autoSave": "onFocusChange",
   "vim.leader": " ",
+  "aws.logLevel": "debug",
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "p"],
@@ -16,16 +17,28 @@
     {
       "before": ["ctrl+k"],
       "commands": ["editor.action.moveLinesUpAction"]
-    },
+    }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    // controling open vertical/horizontal windows
+    {
+      "before": ["<leader>", "w"],
+      "after": ["<C-w>"]
+    },
+
+    // close all open windows except the main window
+    {
+      "before": ["<leader>", "w", "o"],
+      "after": ["<C-w>", "o"]
+    },
+
     {
       "before": ["<C-u>"],
-      "after": ["<C-u>","z","z"]
+      "after": ["<C-u>", "z", "z"]
     },
     {
       "before": ["<C-d>"],
-      "after": ["<C-d>","z","z"]
+      "after": ["<C-d>", "z", "z"]
     },
     {
       "before": ["ctrl+j"],
@@ -57,4 +70,3 @@
   "aws.telemetry": false,
   "git.suggestSmartCommit": false
 }
-
