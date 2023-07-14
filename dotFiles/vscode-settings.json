@@ -5,6 +5,7 @@
   "files.autoSave": "onFocusChange",
   "vim.leader": " ",
   "aws.logLevel": "debug",
+  "workbench.editor.showTabs": false,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "p"],
@@ -68,5 +69,6 @@
   },
   "tabnine.experimentalAutoImports": true,
   "aws.telemetry": false,
-  "git.suggestSmartCommit": false
+  "git.suggestSmartCommit": false,
+  "workbench.colorTheme": "Default Dark+"
 }
