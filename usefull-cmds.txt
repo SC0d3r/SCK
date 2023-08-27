@@ -404,3 +404,6 @@ $ kill -l # this one list all of the signals like -9 -2 etc ...
 # in my case prefix is alt + f
 # or you can prefix ' then type the window number
 # this is especially usefull if you want to jump to a window with double digit
+
+# how to connect to postgresql
+$ psql -U sck shop
