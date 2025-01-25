@@ -1,7 +1,7 @@
- {
+{
   "files.watcherExclude": {
-      "**/.git/objects/**": true,
-      "**/node_modules/**": true
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
   },
   "vim.smartRelativeLine": true,
   "keyboard.dispatch": "keyCode",
@@ -9,7 +9,7 @@
   "files.autoSave": "onFocusChange",
   "vim.leader": " ",
   "aws.logLevel": "debug",
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "p"],
@@ -26,6 +26,10 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
+      "before": ["<C-p>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
       "before": ["<leader>", "p"],
       "commands": ["workbench.action.quickOpen"]
     },
@@ -38,13 +42,11 @@
       "before": ["<leader>", "w"],
       "after": ["<C-w>"]
     },
-
     // close all open windows except the main window
     {
       "before": ["<leader>", "w", "o"],
       "after": ["<C-w>", "o"]
     },
-
     {
       "before": ["<C-u>"],
       "after": ["<C-u>", "z", "z"]
@@ -82,5 +84,10 @@
   "tabnine.experimentalAutoImports": true,
   "aws.telemetry": false,
   "git.suggestSmartCommit": false,
-  "workbench.colorTheme": "Default Dark+"
+  "workbench.colorTheme": "Default Dark+",
+  "aws.suppressPrompts": {
+    "codeWhispererNewWelcomeMessage": true
+  },
+  "explorer.compactFolders": false,
+  "scm.showOutgoingChanges": "never"
 }
